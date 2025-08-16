@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Management</title>
+</head>
+<body>
+<h2>Employee Management</h2>
+
+<a href="/employees/add">Add Employee</a>
+<br><br>
+
+<!-- 🔎 Search Form -->
+<form th:action="@{/employees/search}" method="get">
+    <input type="text" name="keyword" placeholder="Search by name"/>
+    <button type="submit">Search</button>
+</form>
+<br>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Department</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="emp : ${employees}">
+        <td th:text="${emp.id}"></td>
+        <td th:text="${emp.name}"></td>
+        <td th:text="${emp.type}"></td>
+        <td th:text="${emp.department != null ? emp.department.deptName : 'N/A'}"></td>
+        <td th:text="${emp.address != null ? emp.address.city : 'N/A'}"></td>
+        <td th:text="${emp.address != null ? emp.address.state : 'N/A'}"></td>
+        <td>
+            <a th:href="@{'/employees/edit/' + ${emp.id}}">Edit</a> |
+            <a th:href="@{'/employees/delete/' + ${emp.id}}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
