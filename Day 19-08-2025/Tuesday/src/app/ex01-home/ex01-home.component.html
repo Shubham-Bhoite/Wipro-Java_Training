@@ -1,0 +1,17 @@
+<!-- <div class="container mt-4">
+  <h2 class="text-center">Welcome to Fruit Store</h2>
+  <app-ex-01-displaylist></app-ex-01-displaylist>
+</div> -->
+
+<div class="container mt-4">
+  <div class="row">
+    @for (fruit of fruits; track fruit.name) {
+      <div class="col-md-3 mb-4">
+        <app-ex05-fruit [fruit]="fruit" (btnClick)="removeFruit($event)"></app-ex05-fruit>
+      </div>
+    }
+  </div>
+</div>
+
+
+

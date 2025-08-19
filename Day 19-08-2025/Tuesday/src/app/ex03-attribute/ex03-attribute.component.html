@@ -1,0 +1,24 @@
+<h3 class="text-center">ngClass Example</h3>
+
+<!-- 1. Using String -->
+<div [ngClass]="'app1'">
+  Applied using string → class="app1"
+</div>
+
+<br>
+
+<!-- 2. Using Array -->
+<div [ngClass]="['app1', 'app2']">
+  Applied using array → class="app1 app2"
+</div>
+
+<br>
+
+<!-- 3. Using Object -->
+<div [ngClass]="{'app1': flag1, 'app2': flag2}">
+  Applied using object → conditionally applied
+  <p>flag1 = {{ flag1 }}, flag2 = {{ flag2 }}</p>
+</div>
+
+
+

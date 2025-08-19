@@ -1,0 +1,16 @@
+.fruit-box {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #ff9800;
+  border-radius: 6px;
+  display: inline-block;
+  background-color: #fff3e0;
+  font-weight: bold;
+}
+.card {
+  border-radius: 12px;
+}
+.card img {
+  height: 150px;
+  object-fit: cover;
+}

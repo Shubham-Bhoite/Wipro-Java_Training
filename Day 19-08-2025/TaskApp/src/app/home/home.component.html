@@ -1,0 +1,25 @@
+<h1 class="text-center">Task Manager</h1>
+
+<!-- Form to add task -->
+<app-task-list (taskAdded)="onTaskAdded($event)"></app-task-list>
+
+<hr />
+
+<!-- Table showing tasks -->
+<table class="table table-bordered table-striped" *ngIf="tasks.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-task
+      *ngFor="let task of tasks"
+      [task]="task"
+      (delete)="onTaskDeleted($event)">
+    </app-task>
+  </tbody>
+</table>

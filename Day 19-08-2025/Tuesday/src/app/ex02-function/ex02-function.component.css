@@ -1,0 +1,26 @@
+/* .app1 {
+  background-color: lightblue;
+  color: navy;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.app2 {
+  background-color: lightgreen;
+  color: darkgreen;
+  padding: 10px;
+  border: 2px dashed green;
+} */
+
+
+.app1 {
+  border: 2px solid red;
+  padding: 10px;
+  margin: 5px;
+}
+
+.app2 {
+  border: 2px dashed blue;
+  padding: 10px;
+  margin: 5px;
+}

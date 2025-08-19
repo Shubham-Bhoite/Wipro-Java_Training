@@ -1,0 +1,10 @@
+<div class="card shadow-sm h-100">
+  <img [src]="fruit.image" class="card-img-top" [alt]="fruit.name">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{ fruit.name }}</h5>
+    <p class="card-text">{{ fruit.description }}</p>
+    <button class="btn btn-danger btn-sm" (click)="onRemove(fruit.name)">
+      Remove
+    </button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="task-form">
+  <label for="desc">Task Description:</label>
+  <input
+    id="desc"
+    type="text"
+    [(ngModel)]="description"
+    placeholder="Enter task" />
+
+  <label for="cat">Task Category:</label>
+  <select id="cat" [(ngModel)]="category">
+    <option value="">-- Select --</option>
+    <option value="Work">Work</option>
+    <option value="Study">Study</option>
+    <option value="Exercise">Exercise</option>
+  </select>
+
+  <button (click)="addTask()" class="btn btn-primary mt-2">Add Task</button>
+</div>
