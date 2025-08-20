@@ -1,0 +1,41 @@
+<h2>Movie List</h2>
+
+@for (m of movies; track $index) {
+  <div>{{ m.movieId }} -- {{ m.movieName }} -- {{ m.language }} -- {{ m.imdbRating }}</div>
+}
+
+<hr>
+
+<!-- Delete -->
+<div>
+  Enter Movie ID to delete:
+  <input type="text" [(ngModel)]="movieId"/>
+  <button (click)="delete()">Delete</button>
+</div>
+
+<!-- Add -->
+<div>
+  <h3>Add Movie</h3>
+  <input type="text" [(ngModel)]="movieIdAdd" placeholder="Movie ID"/>
+  <input type="text" [(ngModel)]="movieNameAdd" placeholder="Movie Name"/>
+  <input type="text" [(ngModel)]="languageAdd" placeholder="Language"/>
+  <input type="number" [(ngModel)]="imdbRatingAdd" placeholder="IMDB Rating"/>
+  <button (click)="save()">Save</button>
+</div>
+
+<!-- Edit -->
+<div>
+  Enter Movie ID to edit:
+  <input type="text" [(ngModel)]="movieId"/>
+  <button (click)="edit()">Edit</button>
+</div>
+
+<!-- Update -->
+<div>
+  <h3>Edit/Update Movie</h3>
+  <input type="text" [(ngModel)]="movieIdAdd" placeholder="Movie ID"/>
+  <input type="text" [(ngModel)]="movieNameAdd" placeholder="Movie Name"/>
+  <input type="text" [(ngModel)]="languageAdd" placeholder="Language"/>
+  <input type="number" [(ngModel)]="imdbRatingAdd" placeholder="IMDB Rating"/>
+  <button (click)="update()">Update</button>
+</div>
