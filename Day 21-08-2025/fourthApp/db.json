@@ -1,0 +1,39 @@
+{
+  "vehicle": [
+    {
+      "make": "Mahindra",
+      "fuelType": "Diesel",
+      "model": "Thar",
+      "price": 150000,
+      "id": "bc9a"
+    },
+    {
+      "make": "Bullet",
+      "fuelType": "Petrol",
+      "model": "Royal",
+      "price": 2500,
+      "id": "d0f8"
+    },
+    {
+      "make": "Tesla",
+      "fuelType": "Electric",
+      "model": "Model A-3",
+      "price": 550000,
+      "id": "4471"
+    },
+    {
+      "id": "938f",
+      "make": "honda",
+      "fuelType": "petrol",
+      "model": "activa",
+      "price": 1111111
+    },
+    {
+      "id": "9392",
+      "make": "Tata",
+      "fuelType": "CNG",
+      "model": "Nexon",
+      "price": 5555555
+    }
+  ]
+}
