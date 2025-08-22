@@ -1,0 +1,11 @@
+.product-list {
+  text-align: center;   
+  margin-top: 20px;
+}
+
+.product-info {
+  border: 1px solid black;
+  margin: 10px auto;    
+  padding: 10px;
+  width: 250px;  
+}       

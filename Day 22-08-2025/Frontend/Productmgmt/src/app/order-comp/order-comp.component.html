@@ -1,0 +1,24 @@
+<h2>Place Order</h2>
+
+<div>
+  <label>Product:</label>
+  <select name="product" [(ngModel)]="selectedProductId">
+    <option [ngValue]="null">-- Select --</option>
+    <option *ngFor="let p of products" [ngValue]="p.id">
+      {{ p.name }} (Stock: {{ p.qty }})
+    </option>
+  </select>
+</div>
+
+<div style="margin-top:10px;">
+  <label>Quantity:</label>
+  <input type="number" [(ngModel)]="purchaseQty" [min]="1" [max]="selectedProduct()?.qty || 0">
+</div>
+
+<button style="margin-top:10px;"
+        (click)="placeOrder()"
+        [disabled]="!selectedProductId || purchaseQty <= 0 || (selectedProduct() && purchaseQty > (selectedProduct()?.qty || 0))">
+  Place Order
+</button>
+
+<p style="color: green; margin-top:10px;">{{message}}</p>

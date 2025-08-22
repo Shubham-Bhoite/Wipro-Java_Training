@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "p102",
+      "name": "Shirt",
+      "category": "Clothing",
+      "price": 200
+    },
+    {
+      "id": "f20e",
+      "name": "Mobiles",
+      "category": "Vivo",
+      "price": 25000
+    },
+    {
+      "id": "7e39",
+      "name": "Electronics",
+      "category": "TV",
+      "price": 22000
+    }
+  ]
+}
