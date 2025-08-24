@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Food Items</h2>
+  <div class="row">
+    @for (food of foods; track $index) {
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img [src]="food.image" class="card-img-top" alt="{{food.foodName}}" />
+          <div class="card-body">
+            <h5 class="card-title">{{food.foodName}}</h5>
+            <p class="card-text">{{food.description}}</p>
+            <p class="card-text">₹{{food.price}}</p>
+            <a class="btn btn-primary">Order Now</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
