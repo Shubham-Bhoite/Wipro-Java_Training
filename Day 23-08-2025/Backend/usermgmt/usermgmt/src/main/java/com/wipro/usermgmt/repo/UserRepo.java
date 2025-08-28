@@ -8,5 +8,6 @@ import com.wipro.usermgmt.entity.User;
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer> {
 	User findByUserEmailAndPassWord(String email,String passWord);
+	User findByUserEmail(String userName);
 
 }

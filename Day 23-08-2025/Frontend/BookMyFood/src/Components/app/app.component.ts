@@ -10,4 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'BookMyFood';
+  logout() {
+
+      localStorage.removeItem("token")
+
+  }
 }

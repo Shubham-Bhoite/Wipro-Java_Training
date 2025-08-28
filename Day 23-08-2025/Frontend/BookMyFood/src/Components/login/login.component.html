@@ -1,38 +1,66 @@
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    
+    <!-- Left side (image / banner) -->
+    <div class="col-md-6 d-none d-md-flex bg-primary text-white flex-column justify-content-center align-items-center p-5">
+      <h1 class="fw-bold mb-3">Welcome Back 👋</h1>
+      <p class="lead text-center">Sign in to continue ordering your favorite food items.</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Food illustration" class="img-fluid mt-4" style="max-width: 300px;">
+    </div>
+    
+    <!-- Right side (form) -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center bg-light">
+      <div class="card shadow-lg p-5 border-0" style="max-width: 400px; width: 100%; border-radius: 15px;">
+        <h3 class="text-center mb-4 text-primary fw-bold">Sign In</h3>
 
-<div class = "container">
+        <form>
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input 
+              type="email" 
+              [(ngModel)]="user.userEmail" 
+              name="email" 
+              id="email" 
+              class="form-control form-control-lg" 
+              placeholder="Enter your email" />
+          </div>
 
-<form>
-  <!-- Email input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="email" [(ngModel)]="user.userEmail" name="email" id="form2Example1" class="form-control" />
-    <label class="form-label"  for="form2Example1">Email address</label>
-  </div>
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input 
+              type="password" 
+              [(ngModel)]="user.passWord" 
+              name="passWord" 
+              id="password" 
+              class="form-control form-control-lg" 
+              placeholder="Enter your password" />
+          </div>
 
-  <!-- Password input -->
-  <div data-mdb-input-init class="form-outline mb-4">
-    <input type="password" [(ngModel)]="user.passWord" id="form2Example2" name="passWord" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
-  </div>
+          <!-- Remember & Forgot -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rememberMe" checked />
+              <label class="form-check-label" for="rememberMe"> Remember me </label>
+            </div>
+            <a href="#" class="text-decoration-none small">Forgot password?</a>
+          </div>
 
-  <!-- 2 column grid layout for inline styling -->
-  <div class="row mb-4">
-    <div class="col d-flex justify-content-center">
-      <!-- Checkbox -->
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
+          <!-- Button -->
+          <button 
+            type="button" 
+            (click)="login()" 
+            class="btn btn-primary btn-lg w-100 shadow-sm rounded-pill">
+            Sign in
+          </button>
+
+          <!-- Register -->
+          <div class="text-center mt-4">
+            <p class="mb-0">Not a member? <a href="#!" class="text-primary fw-bold">Register</a></p>
+          </div>
+        </form>
       </div>
     </div>
-
-</div>
-
-  <!-- Submit button -->
-  <button  type="button" (click)="login()"   data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
-
-  <!-- Register buttons -->
-  <div class="text-center">
-    <p>Not a member? <a href="#!">Register</a></p>
-    </div>
-</form>
-
+  </div>
 </div>

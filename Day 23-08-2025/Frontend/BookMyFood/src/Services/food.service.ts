@@ -1,31 +1,28 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Food } from '../Interface/food';
+import { BASE_URL } from '../Utils/appConstant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  foodUrl: string = 'http://localhost:9191/foods';
-
-  private getHeaders() {
-    const token = localStorage.getItem('token');  // token saved after login
-    return new HttpHeaders().set('Authorization', token ? token : '');
-  }
-
+  // Get all foods
   getFoods(): Observable<Food[]> {
-    return this.http.get<Food[]>(this.foodUrl, { headers: this.getHeaders() });
+    return this.http.get<Food[]>(`${BASE_URL}/foods`);
   }
 
-  addFoods(foods: Food): Observable<Food> {
-    return this.http.post<Food>(this.foodUrl, foods, { headers: this.getHeaders() });
+  // Add new food
+  addFoods(food: Food): Observable<Food> {
+    return this.http.post<Food>(`${BASE_URL}/foods`, food);
   }
 
-  deleteFood(id: number) {
-    return this.http.delete(`${this.foodUrl}/${id}`, { headers: this.getHeaders() });
+  // Delete food by ID
+  deleteFood(id: number): Observable<void> {
+    return this.http.delete<void>(`${BASE_URL}/foods/${id}`);
   }
 }

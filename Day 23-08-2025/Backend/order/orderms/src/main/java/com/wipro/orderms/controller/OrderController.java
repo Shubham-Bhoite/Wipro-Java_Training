@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wipro.orderms.dto.Payment;
 import com.wipro.orderms.entity.Order;
 import com.wipro.orderms.service.OrderService;
 
@@ -25,9 +28,12 @@ public class OrderController {
 	
 	
 	@PostMapping
-	public ResponseEntity<String> save(@RequestBody Order order){
+	public Order save(@RequestBody Order order, @RequestHeader("Authorization") String authHeaderValue,
+			@RequestAttribute("userId") String userId){
+		System.out.println("in orderController user id is :" + userId);
+		order.setUserId(Integer.parseInt(userId));
 		
-		return orderService.save(order);
+		return orderService.save(order, authHeaderValue);
 		
 	}
 	
@@ -49,6 +55,12 @@ public class OrderController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable int id){
 		return orderService.delete(id);
+	}
+	
+	@PostMapping("/pay")
+	public Payment pay(@RequestBody Payment payment) {
+		orderService.pay(payment);
+		return payment;
 	}
 
 }
