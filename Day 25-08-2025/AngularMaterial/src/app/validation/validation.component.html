@@ -1,0 +1,28 @@
+<h2>Validation Form Example</h2>
+
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label>First Name:</label>
+    <input type="text" formControlName="fName" placeholder="Enter first name" />
+
+    <span *ngIf="fg.controls['fName'].invalid && (fg.controls['fName'].touched || fg.controls['fName'].dirty)" style="color:red;">
+      <span *ngIf="fg.controls['fName'].errors?.['required']">First Name is Required</span>
+    </span>
+  </div>
+
+  <br>
+  <div>
+    <label>Email:</label>
+    <input type="text" formControlName="email" placeholder="Enter email" />
+
+    <span *ngIf="fg.controls['email'].invalid && (fg.controls['email'].touched || fg.controls['email'].dirty)" style="color:red;">
+      <span *ngIf="fg.controls['email'].errors?.['required']">Email is Required</span>
+      <span *ngIf="fg.controls['email'].errors?.['email']">Email is not in correct format</span>
+    </span>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="fg.invalid">Save</button>
+  </div>
+</form>

@@ -1,0 +1,75 @@
+
+<!-- EX-01 -->
+<!-- <h2>List of Cities</h2>
+
+<mat-list>
+  @for (city of cities; track city) {
+    <mat-list-item>
+      {{ city }}
+    </mat-list-item>
+  }
+</mat-list> -->
+
+
+<!-- EX-02 -->
+<!-- <h1>Stepper form</h1>
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your age</ng-template>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 17, 32, 22"
+               required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Fill out your email</ng-template>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="thirdCtrl" placeholder="Ex. test@test.com"
+               required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button matButton matStepperPrevious>Back</button>
+      <button matButton (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper> -->
+
+<!-- EX-03
+<app-reactive></app-reactive> -->
+
+
+<!-- EX-04
+ <app-registration></app-registration> -->
+
+ <!-- EX-05 -->
+  <app-validation></app-validation>
