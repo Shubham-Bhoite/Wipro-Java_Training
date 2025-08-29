@@ -38,6 +38,10 @@ public class FlightController {
         return ResponseEntity.ok(flightService.getFlightsBySourceAndDestination(source,destination,date));
     }
 
+    @Operation(summary = "This method is used to get a specific flight")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Specific flight fetched success")
+    })
     @GetMapping("/flights/{id}")
     public ResponseEntity<FlightResponse> getFlightById(@PathVariable Long id){
         return ResponseEntity.ok(flightService.getFlightById(id));
