@@ -1,16 +1,19 @@
 package com.wipro.flightms.dto.response;
 
-
-
-
 public class AirlineResponse {
     private Long airportId;
     private String airportName;
     private String airportCode;
     private String address;
-	public AirlineResponse(Long airportId2, String airportName2, String airportCode2, String address2) {
-		// TODO Auto-generated constructor stub
-	}
+
+    public AirlineResponse(Long airportId, String airportName, String airportCode, String address) {
+        this.airportId = airportId;
+        this.airportName = airportName;
+        this.airportCode = airportCode;
+        this.address = address;
+    }
+    
+    
 	public Long getAirportId() {
 		return airportId;
 	}

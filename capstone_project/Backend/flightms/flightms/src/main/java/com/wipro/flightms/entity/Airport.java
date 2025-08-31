@@ -14,6 +14,10 @@ public class Airport {
     private String airportName;
     private String airportCode;
     private String address;
+    
+    public Airport() {
+    }
+    
 	public Long getAirportId() {
 		return airportId;
 	}
@@ -38,6 +42,13 @@ public class Airport {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public Airport(  String airportName, String airportCode, String address) {
+		
+		this.airportName = airportName;
+		this.airportCode = airportCode;
+		this.address = address;
+	}
     
     
+	
 }

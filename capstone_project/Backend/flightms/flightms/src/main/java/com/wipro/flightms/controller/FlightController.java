@@ -22,6 +22,9 @@ import java.util.List;
 public class FlightController {
 
     private FlightService flightService;
+    public FlightController(FlightService flightService) {
+        this.flightService = flightService;
+    }
 
 
     @Operation(summary = "This method is used to get all available flights")

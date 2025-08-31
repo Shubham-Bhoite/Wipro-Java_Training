@@ -1,0 +1,102 @@
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Flight Booking - Passenger Details</h4>
+        </div>
+        <div class="card-body">
+          <!-- Flight Summary -->
+          <div class="alert alert-info" *ngIf="flight">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="mb-1">{{flight.flightName}}</h5>
+                <p class="mb-0">{{flight.source}} to {{flight.destination}}</p>
+              </div>
+              <div class="text-end">
+                <h5 class="mb-1">₹{{flight.price}}</h5>
+                <small>{{flight.startDate | date}} | {{flight.time}}</small>
+              </div>
+            </div>
+          </div>
+          
+          <!-- No Flight Data Message -->
+          <div class="alert alert-warning" *ngIf="!flight">
+            <div class="text-center">
+              <h5 class="mb-1">No Flight Selected</h5>
+              <p class="mb-0">Please go back to the home page and select a flight to book.</p>
+              <button class="btn btn-primary mt-2" (click)="goBack()">
+                <i class="fas fa-arrow-left me-2"></i>Go Back
+              </button>
+            </div>
+          </div>
+
+          <form #bookingForm="ngForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate [class.disabled]="!flight">
+            <!-- Passenger Name -->
+            <div class="mb-3">
+              <label for="passengerName" class="form-label">Passenger Name *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="passengerName"
+                name="passengerName"
+                [(ngModel)]="booking.passengerName"
+                #passengerName="ngModel"
+                required
+                minlength="3"
+                pattern="^[a-zA-Z ]*$"
+                [class.is-invalid]="passengerName.invalid && (passengerName.dirty || passengerName.touched)">
+              <div class="invalid-feedback" *ngIf="passengerName.errors?.['required']">
+                Passenger name is required
+              </div>
+              <div class="invalid-feedback" *ngIf="passengerName.errors?.['minlength']">
+                Name must be at least 3 characters long
+              </div>
+              <div class="invalid-feedback" *ngIf="passengerName.errors?.['pattern']">
+                Only letters and spaces are allowed
+              </div>
+            </div>
+
+            <!-- Passenger Email -->
+            <div class="mb-3">
+              <label for="passengerEmail" class="form-label">Email Address *</label>
+              <input
+                type="email"
+                class="form-control"
+                id="passengerEmail"
+                name="passengerEmail"
+                [(ngModel)]="booking.passengerEmail"
+                #passengerEmail="ngModel"
+                required
+                email
+                [class.is-invalid]="passengerEmail.invalid && (passengerEmail.dirty || passengerEmail.touched)">
+              <div class="invalid-feedback" *ngIf="passengerEmail.errors?.['required']">
+                Email address is required
+              </div>
+              <div class="invalid-feedback" *ngIf="passengerEmail.errors?.['email']">
+                Please enter a valid email address
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid gap-2">
+              <button 
+                type="submit" 
+                class="btn btn-primary"
+                [disabled]="bookingForm.invalid || isLoading">
+                <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                Continue to Payment
+              </button>
+              <button 
+                type="button" 
+                class="btn btn-outline-secondary"
+                (click)="goBack()">
+                Go Back
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

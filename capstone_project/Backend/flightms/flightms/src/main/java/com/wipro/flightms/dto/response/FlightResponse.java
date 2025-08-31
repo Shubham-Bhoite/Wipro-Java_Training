@@ -1,7 +1,5 @@
 package com.wipro.flightms.dto.response;
 
-
-
 import java.time.LocalDate;
 
 public class FlightResponse {
@@ -15,70 +13,89 @@ public class FlightResponse {
     private LocalDate endDate;
     private Double price;
     private String time;
-	public FlightResponse(Long flightId2, String flightName2, String flightNumber2, String airline2, String airportCode,
-			String airportCode2, LocalDate startDate2, LocalDate endDate2, Double price2, String time2) {
-		// TODO Auto-generated constructor stub
-	}
-	public Long getFlightId() {
-		return flightId;
-	}
-	public void setFlightId(Long flightId) {
-		this.flightId = flightId;
-	}
-	public String getFlightName() {
-		return flightName;
-	}
-	public void setFlightName(String flightName) {
-		this.flightName = flightName;
-	}
-	public String getFlightNumber() {
-		return flightNumber;
-	}
-	public void setFlightNumber(String flightNumber) {
-		this.flightNumber = flightNumber;
-	}
-	public String getAirline() {
-		return airline;
-	}
-	public void setAirline(String airline) {
-		this.airline = airline;
-	}
-	public String getSource() {
-		return source;
-	}
-	public void setSource(String source) {
-		this.source = source;
-	}
-	public String getDestination() {
-		return destination;
-	}
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
-	public LocalDate getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(LocalDate startDate) {
-		this.startDate = startDate;
-	}
-	public LocalDate getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(LocalDate endDate) {
-		this.endDate = endDate;
-	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-	public String getTime() {
-		return time;
-	}
-	public void setTime(String time) {
-		this.time = time;
-	}
-    
-    
+
+    public FlightResponse(Long flightId, String flightName, String flightNumber, String airline,
+                          String source, String destination, LocalDate startDate, 
+                          LocalDate endDate, Double price, String time) {
+        this.flightId = flightId;
+        this.flightName = flightName;
+        this.flightNumber = flightNumber;
+        this.airline = airline;
+        this.source = source;
+        this.destination = destination;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.price = price;
+        this.time = time;
+    }
+
+    public Long getFlightId() {
+        return flightId;
+    }
+    public void setFlightId(Long flightId) {
+        this.flightId = flightId;
+    }
+
+    public String getFlightName() {
+        return flightName;
+    }
+    public void setFlightName(String flightName) {
+        this.flightName = flightName;
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
+
+    public String getSource() {
+        return source;
+    }
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getTime() {
+        return time;
+    }
+    public void setTime(String time) {
+        this.time = time;
+    }
 }

@@ -2,6 +2,7 @@ package com.wipro.flightms.entity;
 
 import jakarta.persistence.*;
 
+
 import java.time.LocalDate;
 
 @Entity
@@ -33,6 +34,10 @@ public class Flight {
     private Double price;
 
     private String time;
+    
+    
+    public Flight() {
+    }
 
 	public Long getFlightId() {
 		return flightId;
@@ -113,6 +118,22 @@ public class Flight {
 	public void setTime(String time) {
 		this.time = time;
 	}
+
+	public Flight(String flightName, String flightNumber, String airline, Airport source,
+			Airport destination, LocalDate startDate, LocalDate endDate, Double price, String time) {
+		
+		this.flightName = flightName;
+		this.flightNumber = flightNumber;
+		this.airline = airline;
+		this.source = source;
+		this.destination = destination;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.price = price;
+		this.time = time;
+	}
+
+
     
     
 }
